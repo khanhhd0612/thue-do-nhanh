@@ -105,6 +105,19 @@ const uploadProductImages = {
     })
 };
 
+const deleteProductImage = {
+    params: Joi.object().keys({
+        productId: Joi.string().custom(objectId).required()
+    }),
+
+    body: Joi.object().keys({
+        imageUrl: Joi.string().uri().required().messages({
+            'string.uri': 'URL ảnh không hợp lệ',
+            'any.required': 'URL ảnh là bắt buộc'
+        })
+    })
+};
+
 module.exports = {
     createProduct,
     updateProduct,
@@ -113,4 +126,5 @@ module.exports = {
     deleteProduct,
     queryProducts,
     uploadProductImages,
+    deleteProductImage,
 };
