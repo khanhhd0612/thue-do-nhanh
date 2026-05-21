@@ -63,7 +63,7 @@ const userSchema = mongoose.Schema(
                 values: roles,
                 message: `Role phải là một trong: ${roles.join(', ')}`
             },
-            default: 'admin',
+            default: 'user',
             required: true
         },
 
