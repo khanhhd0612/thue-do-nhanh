@@ -70,14 +70,14 @@ const getCategoryBySlug = async (slug) => {
 };
 
 const getCategoryById = async (categoryId) => {
-    const category = await Category.findOne({ categoryId });
+    const category = await Category.findById(categoryId);
 
     if (!category) {
         throw new ApiError(404, 'Danh mục không tồn tại');
     }
 
     return category;
-}; 
+};
 
 /**
  * Xóa danh mục (soft delete — set isActive = false)
