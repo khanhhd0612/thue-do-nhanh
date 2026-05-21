@@ -4,6 +4,8 @@ const userRoute = require('./user.route');
 const categoryRoute = require('./category.route');
 const productRoute = require('./product.route');
 const inventoryRoute = require('./inventory.route');
+const bookingRoute = require('./booking.route');
+const adminBookingRoute = require('./adminBooking.route');
 
 const router = express.Router();
 
@@ -13,6 +15,8 @@ const defaultRoutes = [
     { path: '/categories', route: categoryRoute },
     { path: '/products', route: productRoute },
     { path: '/inventory', route: inventoryRoute },
+    { path: '/bookings', route: bookingRoute },
+    { path: '/admin/bookings', route: adminBookingRoute },
 ];
 
 defaultRoutes.forEach((route) => {
