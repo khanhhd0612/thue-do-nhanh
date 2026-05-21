@@ -272,7 +272,7 @@ const createUser = {
 
         role: Joi.string()
             .valid(...roles)
-            .default('viewer')
+            .default('user')
             .messages({
                 'any.only': `Role phải là: ${roles.join(', ')}`
             })
@@ -331,7 +331,7 @@ const updateUser = {
 
         role: Joi.string()
             .valid(...roles)
-            .default('viewer')
+            .default('user')
             .messages({
                 'any.only': `Role phải là: ${roles.join(', ')}`
             }),
@@ -365,7 +365,7 @@ const updateRole = {
     body: Joi.object().keys({
         role: Joi.string()
             .valid(...roles)
-            .default('viewer')
+            .default('user')
             .messages({
                 'any.only': `Role phải là: ${roles.join(', ')}`
             }),
