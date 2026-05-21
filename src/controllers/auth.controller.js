@@ -36,7 +36,9 @@ const register = catchAsync(async (req, res) => {
 });
 
 const logout = catchAsync(async (req, res) => {
-    await authService.logout();
+    const { refreshToken } = req.cookies;
+
+    await authService.logout(refreshToken);
     res.clearCookie('refreshToken');
 
     return res.json({
